@@ -1,0 +1,163 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="BlankApp" ng-cloak>
+  <div ng-controller="cntr" layout="column" layout="center center">
+    <div id="header" layout="row">
+      <div>
+        <h1>BROWSEMALLS</h1>
+      </div>
+      <div layout="row" flex-offset="55" layout-align="end center">
+        <input type="text"><i class="material-icons">search</i>
+        <md-input-container>
+        <label>Select Location</label>
+          <md-select ng-model="locationData">
+            <md-option ng-repeat="location in locationData">{{location}}</md-option>
+          </md-select>
+        </md-input-container>
+        <a href="#">Sign in</a>
+      </div>
+    </div><!--header end-->
+    <div id="toolbar" layout="row" flex="5" layout-align="center center">
+      <a href="#" flex-offset="5" flex="10">Home</a>
+      <a href="#" flex="10">Men</a>
+      <a href="#" flex="10">Women</a>
+      <a href="#" flex="10">Baby and kids</a>
+      <a href="#" flex="10">Furniture</a>
+      <a href="#" flex="10">Books</a>
+      <a href="#" flex="10">Events</a>
+      <a href="#" flex="10">Laptops</a>
+      <a href="#" flex="10">Food</a>
+      <a href="#" flex="10">Sports</a>
+      <a href="#" flex="10">Others</a>
+    </div><!--toolbar end-->
+     <div layout="column" layout-align="center center">
+         <div>
+            <img src="images/pic4.jpg">
+         </div><!--image end-->
+         <div id="mainContent" layout="row" layout-align="center" flex="90">
+            <div layout="column" flex="20">
+              <md-card layout-align="center center">
+                 <h5>Location</h5>
+                 <md-input-container>
+                   <label>List Of Malls</label>
+                   <md-select ng-model="data">
+                     <md-option ng-repeat="malls in data" value={{data}}>{{malls}}</md-option>
+                   </md-select>
+                 </md-input-container>
+              </md-card>
+              <md-card>
+                <md-content>
+                  <md-list>
+                    <md-list-item  ng-repeat="brands in brandData">
+                      {{brands}}
+                      <md-divider></md-divider>
+                    </md-list-item>
+                  </md-list>
+                </md-content>
+              </md-card>
+              <md-card>
+                <md-content>
+                 If a maxWidth and a maxHeight is not set, the component will work, but, it will not be responsive
+                </md-content>
+              </md-card>
+            </div><!--left section end-->
+            <div flex="70" layout="column">
+              <div layout="row" flex="5" id="secondToolbar" layout-align="start center">
+                <a href="#" flex-offset="5">Cash Back</a>
+                <a href="#" flex-offset="10">Discount</a>
+                <a href="#" flex-offset="10">Wallet</a>
+                <a href="#" flex-offset="10">Bank</a>
+                <a href="#" flex-offset="10">Furniture</a>
+                <a href="#" flex-offset="10">Others</a>
+              </div><!--toolbar end-->
+              <div layout="row">
+                <md-card layout-align="center center">
+                    <md-card-content>
+                      <img src="images/brand.jpg">
+                    </md-card-content>
+                    <md-card-actions>
+                      <md-button>View</md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card layout-align="center center">
+                    <md-card-content>
+                      <img src="images/brand1.jpg">
+                    </md-card-content>
+                    <md-card-actions>
+                      <md-button>View</md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card layout-align="center center">
+                    <md-card-content>
+                      <img src="images/brand2.jpg">
+                    </md-card-content>
+                    <md-card-actions>
+                      <md-button>View</md-button>
+                    </md-card-actions>
+                </md-card>
+              </div><!--brand ends-->
+              <div layout="row" flex="5" id="secondToolbar" layout-align="start center">
+                <div flex-offset="5">Trending Offers</div>
+              </div>
+              <div layout="row">
+                <md-card layout-align="center center">
+                    <md-card-content>
+                      <img src="images/trendingOffer2.jpg">
+                    </md-card-content>
+                    <md-card-actions>
+                      <md-button>View</md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card layout-align="center center">
+                    <md-card-content>
+                      <img src="images/trendingOffer3.png">
+                    </md-card-content>
+                    <md-card-actions>
+                      <md-button>View</md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card layout-align="center center">
+                    <md-card-content>
+                      <img src="images/trendingOffer4.jpg">
+                    </md-card-content>
+                    <md-card-actions>
+                      <md-button>View</md-button>
+                    </md-card-actions>
+                </md-card>
+              </div><!--Trending offfers end-->
+            </div><!--right section end-->
+        </div><!--main content end-->
+      </div><!--big div end-->
+      <div id="footer" flex="30" layout="row" layout-align="center">
+        <div flex-offset="5">
+          <h3>About Us</h3>
+        </div>
+        <div flex-offset="20">
+          <h3>Services</h3>
+        </div>
+        <div flex-offset="20">
+          <h3>Portfolio</h3>
+        </div>
+        <div flex-offset="20">
+          <h3>Contact Us</h3>
+        </div>
+      </div><!--footer-->
+  </div>
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  <script src="script/frontPageScript.js"></script>
+
+</body>
+</html>
